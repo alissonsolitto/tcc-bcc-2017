@@ -1,0 +1,168 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <button class="btn btn-success" data-backdrop="false" data-toggle="modal" data-target="#addSensor">
+      Add Sensor
+    </button>
+    <div class="row">
+      <div class="col-md-4" *ngFor="let s of lstSensorSimulator">
+        <div class="card">
+          <div class="card-header" data-background-color="blue">
+            {{s.type}}
+          </div>
+          <div style="text-align: center; padding: 5px;">
+            <i class="material-icons" style="font-size: 100px;">memory</i>
+          </div>
+          <div class="card-body" style="padding: 10px;">
+            <h4 class="card-title">{{s.label}}</h4>
+            <p class="card-text"><strong>Comment:</strong> {{s.comment}}</p>
+            <p class="card-text"><strong>Property:</strong> {{s.property}}</p>
+            <a class="btn btn-primary" style="width: 100%;" data-backdrop="false" data-toggle="modal" data-target="#addSettings" (click)="sensorSettings(s)">
+              Settings
+            </a>
+            <div class="row">
+              <div class="col-md-6">
+                <a (click)="startSimulator(s)" class="btn btn-success" style="width: 100%;">Start</a>
+              </div>
+              <div class="col-md-6" style="padding-left: 5px;">
+                <a (click)="stopSimulator(s)" class="btn btn-danger" style="width: 100%;">Stop</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Graficos -->
+    <div class="row" *ngFor="let s of lstSensorSimulator">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-chart" data-background-color="green">
+            <div class="ct-chart" id="dailySalesChart_{{s.nome}}"></div>
+          </div>
+          <div class="card-content">
+            <h4 class="title">{{s.uri}}</h4>
+            <p class="category">{{s.property}}</p>
+          </div>
+        </div>
+      </div>
+    </div>    
+    <!-- Console Simulator -->
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card text-center">
+          <div class="card-header" data-background-color="blue">
+            Console Simulator
+          </div>
+          <div class="card-body" style="text-align: left; padding: 20px;">
+            <p class="card-text" *ngFor="let sim of lstConsoleSimulator">{{sim}}</p>
+          </div>          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Property -->
+<div class="modal fade" id="addSensor" tabindex="-1" role="dialog" aria-labelledby="addSensor" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Sensor</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style=" position: absolute; right: 30px; top: 30px;">
+          <i class="material-icons" style="font-size: 24px;">close</i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>URI</th>
+              <th>Label</th>
+              <th>Comment</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let s of lstSensor">
+              <td>{{s.nome}}</td>
+              <td>{{s.label}}</td>
+              <td>{{s.comment}}</td>
+              <td class="td-actions">
+                <button type="button" rel="tooltip" class="btn btn-success" (click)="onClickAddSensor(s)">
+                    <i class="material-icons">add</i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Settings -->
+<div class="modal fade" id="addSettings" tabindex="-1" role="dialog" aria-labelledby="addSettings" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Settings</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style=" position: absolute; right: 30px; top: 30px;">
+          <i class="material-icons" style="font-size: 24px;">close</i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="dropdown">
+          <button href="#" class="btn dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+              {{selectFeature.label}}
+              <b class="caret"></b>
+          </button>
+          <ul class="dropdown-menu">
+            <li *ngFor="let f of lstFeature" (click)="onClickFeature(f)"><a>{{f.label}}</a></li>
+          </ul>
+        </div>
+        <form>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group form-blue label-floating is-empty">
+                <label class="control-label">Label</label>
+                <input type="text" [(ngModel)]="sensorSelected.objObservation.descLabel" name="descLabel" (ngModelChange)="onModelChange($event)"
+                  class="form-control">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group form-blue label-floating is-empty">
+                <label class="control-label">Value</label>
+                <input type="text" [(ngModel)]="sensorSelected.objObservation.value" name="value" (ngModelChange)="onModelChange($event)"
+                  class="form-control">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group form-blue label-floating is-empty">
+                <label class="control-label">Unit</label>
+                <input type="text" [(ngModel)]="sensorSelected.objObservation.unit" name="unit" (ngModelChange)="onModelChange($event)" class="form-control">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group form-blue label-floating is-empty">
+                <label class="control-label">Symbol</label>
+                <input type="text" [(ngModel)]="sensorSelected.objObservation.symbol" name="symbol" (ngModelChange)="onModelChange($event)"
+                  class="form-control">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group form-blue label-floating is-empty">
+                <label class="control-label">Comment</label>
+                <textarea class="form-control" [(ngModel)]="sensorSelected.objObservation.descComment" name="descComment" rows="5" (ngModelChange)="onModelChange($event)"></textarea>
+              </div>
+            </div>
+          </div>
+        </form>
+        <label class="control-label">JSON</label>
+        <textarea class="form-control" readonly [ngModel]="sensorSelected.objObservationString" name="objObservationString" rows="5"></textarea>
+      </div>
+    </div>
+  </div>
+</div>

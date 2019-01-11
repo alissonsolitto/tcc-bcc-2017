@@ -1,0 +1,82 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <button class="btn btn-success" data-backdrop="false" data-toggle="modal" data-target="#formAdd">
+      Add      
+    </button>    
+
+    <div class="card">
+      <div class="card-header" data-background-color="blue">
+        <h4 class="title">Feature of Interest</h4>
+        <p class="category">Instance</p>
+      </div>
+      <div class="card-content table-responsive">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>URI</th>
+              <th>Label</th>
+              <th>Comment</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let s of lstFeature">
+              <td>{{s.nome}}</td>
+              <td>{{s.label}}</td>
+              <td>{{s.comment}}</td>
+              <td class="td-actions">
+                <button type="button" rel="tooltip" class="btn btn-danger" (click)="delete(s)">
+                    <i class="material-icons">close</i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Add -->
+<div class="modal fade" id="formAdd" tabindex="-1" role="dialog" aria-labelledby="formAdd" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">      
+      <div class="modal-body">
+        <div class="card">
+          <div class="card-header" data-background-color="blue">
+            <h4 class="title">Register Feature of Interest</h4>
+          </div>
+          <div class="card-content">
+            <form #form="ngForm">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group form-blue label-floating is-empty">
+                    <label class="control-label">URI</label>
+                    <input type="text" [(ngModel)]="indName" name="indName" class="form-control">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group form-blue label-floating is-empty">
+                    <label class="control-label">Label</label>
+                    <input type="text" [(ngModel)]="label" name="label" class="form-control">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group form-blue label-floating is-empty">
+                    <label class="control-label">Comment</label>
+                    <textarea class="form-control" [(ngModel)]="comment" name="comment" rows="5"></textarea>
+                  </div>
+                </div>
+              </div>              
+              <button class="btn btn-danger pull-right"  (click)="cancel();">Cancel</button>
+              <button class="btn btn-success pull-right" (click)="create();">Save</button>
+              <div class="clearfix"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

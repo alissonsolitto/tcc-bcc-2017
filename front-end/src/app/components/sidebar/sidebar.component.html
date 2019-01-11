@@ -1,0 +1,22 @@
+<div class="logo">
+    <a [routerLink]="['/dashboard']" class="simple-text">
+        <div class="logo-img">
+            <img src="../assets/img/siot.png" />
+        </div>
+        <div style="text-align: center;">Semantic<br/>
+            <span style="font-size: 10px;">Internet of Things</span>
+        </div>
+    </a>
+</div>
+<div class="sidebar-wrapper" slimScroll [options]="opts">
+    <div class="nav-container">
+        <ul class="nav">
+            <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}}">
+                <a [routerLink]="[menuItem.path]">
+                    <i class="material-icons">{{menuItem.icon}}</i>
+                    <p>{{menuItem.title}}</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,1783 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://purl.oclc.org/NET/ssnx/meteo/aws#"
+     xml:base="http://purl.oclc.org/NET/ssnx/meteo/aws"
+     xmlns:cc="http://creativecommons.org/ns#"
+     xmlns:quantity="http://purl.oclc.org/NET/ssnx/qu/quantity#"
+     xmlns:cf="http://purl.oclc.org/NET/ssnx/cf/cf-property#"
+     xmlns:qu="http://purl.oclc.org/NET/ssnx/qu/qu#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:prefix="http://purl.oclc.org/NET/ssnx/qu/prefix#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:dim="http://purl.oclc.org/NET/ssnx/qu/dim#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:cf-feature="http://purl.oclc.org/NET/ssnx/cf/cf-feature#"
+     xmlns:ssn="http://purl.oclc.org/NET/ssnx/ssn#"
+     xmlns:unit="http://purl.oclc.org/NET/ssnx/qu/unit#"
+     xmlns:dct="http://purl.org/dc/terms/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:aws="http://purl.oclc.org/NET/ssnx/meteo/aws#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <owl:Ontology rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws">
+        <owl:imports rdf:resource="http://purl.oclc.org/NET/ssnx/ssn"/>
+        <owl:imports rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-feature"/>
+        <owl:imports rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+        <owl:imports rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
+        <owl:imports rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu"/>
+        <dct:created>2010-09-21</dct:created>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This ontology is is part of the Agriculture Meteorology example showcasing the ontology developed by the W3C Semantic Sensor Networks incubator group (SSN-XG). It is published here in order to generalize the potential usage and the alignment with other standardization efforts of the SSN ontology.
+
+For more information on the group&apos;s activities see: http://www.w3.org/2005/Incubator/ssn/ .
+
+DISCLAIMER: This ontology includes information that has been automatically generated from data sourced from third parties but has not been fully manually checked. It is provided AS-IS, for information only, with no warranties or guarantees and confers no rights.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Please report any errors to the Semantic Sensor Network Incubator Activity via the public W3C list public-xg-ssn@w3.org</rdfs:comment>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Laurent Lefort (CSIRO, Australia and W3C Semantic Sensor Network Incubator Group)</dc:creator>
+        <dc:title>Ontology for Meteorological sensors</dc:title>
+        <rdfs:seeAlso>http://www.w3.org/2005/Incubator/ssn/</rdfs:seeAlso>
+        <dc:identifier>http://purl.oclc.org/NET/ssnx/meteo/aws</dc:identifier>
+        <dc:rights>Copyright 2010 - 2011 CSIRO. All rights reserved.</dc:rights>
+        <dct:modified>2011-06-20</dct:modified>
+        <dc:description>Meteorological sensor ontology (sensor types) </dc:description>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://creativecommons.org/ns#license -->
+
+    <owl:AnnotationProperty rdf:about="http://creativecommons.org/ns#license"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/author -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/author"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/identifier -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/identifier"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/rights -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/rights"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/source -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/source"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/created -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/modified -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/modified"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#comment -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#comment"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#isDefinedBy -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#isDefinedBy"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#label -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#label"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#seeAlso -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/ssn#observes -->
+
+    <owl:ObjectProperty rdf:about="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#Albedometer -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#Albedometer">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#RadiationSensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Dimensionless"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch albedometer [GAMP 2.3.1.1] http://www.wmo.int/pages/prog/wcp/agm/gamp/gamp_en.html</dc:source>
+        <rdfs:comment>pair of upward and downward facing solarimeters</rdfs:comment>
+        <rdfs:label>albedometer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#AneroidDisplacementTransducer -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#AneroidDisplacementTransducer">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#AtmosphericPressureSensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#StressOrPressure"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch aneroid displacement transducer [CIMO Guide 3.3.1] http://www.wmo.int/pages/prog/www/IMOP/publications/CIMO-Guide/CIMO%20Guide%207th%20Edition,%202008/Part%20I/Chapter%203.pdf</dc:source>
+        <rdfs:comment>The aneroid displacement transducer contains a sensor with electrical properties (resistance or capacitance) that changes as the atmospheric pressure changes.</rdfs:comment>
+        <rdfs:label>aneroid displacement transducer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#AtmometerOrSmallSurfaceEvaporimeter -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#AtmometerOrSmallSurfaceEvaporimeter">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#ScreenedAndOpenPanEvaporimeter"/>
+        <rdfs:label>Atmometer or small surface evaporimeter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#AtmosphericPressureSensor -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#AtmosphericPressureSensor">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#SensingDevice"/>
+        <rdfs:label>Atmospheric pressure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#AutomaticSunshineRecorder -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#AutomaticSunshineRecorder">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#RadiationSensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Duration"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch Automatic sunshine recorder [GAMP 2.4.1.1] http://www.wmo.int/pages/prog/wcp/agm/gamp/gamp_en.html</dc:source>
+        <rdfs:comment>time during which direct radiation (on a plane perpendicular to the Sun’s beam) is larger than 120 Wm-2.</rdfs:comment>
+        <rdfs:label>Automatic sunshine recorder</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#BimetallicActinograph -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#BimetallicActinograph">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#Pyranometer"/>
+        <rdfs:comment>total solar irradiance on a horizontal surface</rdfs:comment>
+        <rdfs:label>Bimetallic actinograph</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#CampbellStokesSunshineMeter -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#CampbellStokesSunshineMeter">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#RadiationSensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Duration"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch Campbell-Stokes sunshine meter [GAMP 2.4.1.1] http://www.wmo.int/pages/prog/wcp/agm/gamp/gamp_en.html</dc:source>
+        <rdfs:comment>World standard abolished in 1989</rdfs:comment>
+        <rdfs:label>Campbell-Stokes sunshine meter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#CapacitanceSensor -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#CapacitanceSensor">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#HumiditySensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Dimensionless"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#StressOrPressure"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch capacitance sensor [ET-AWS] http://www.hydrometeoindustry.org/Meetings2010/ET-AWS-6/Doc8[1]-AWS-MetadataCatalogues.pdf</dc:source>
+        <rdfs:comment>certain materials interact with water vapour and undergo a change in capacitance, in relation to ambient humidity.</rdfs:comment>
+        <rdfs:label>capacitance sensor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#CapacitiveAluminumOxide -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#CapacitiveAluminumOxide">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#CapacitanceSensor"/>
+        <rdfs:comment>certain materials interact with water vapour and undergo a change in capacitance, in relation to ambient humidity.</rdfs:comment>
+        <rdfs:label>Capacitive - aluminum oxide</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#CapacitiveAneroid -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#CapacitiveAneroid">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#AneroidDisplacementTransducer"/>
+        <rdfs:comment>The aneroid displacement transducer contains a sensor with electrical properties (resistance or capacitance) that changes as the atmospheric pressure changes.</rdfs:comment>
+        <rdfs:label>Capacitive aneroid</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#CapacitiveBead -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#CapacitiveBead">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#TemperatureSensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Temperature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch Capacitive bead [ET-AWS] http://www.hydrometeoindustry.org/Meetings2010/ET-AWS-6/Doc8[1]-AWS-MetadataCatalogues.pdf</dc:source>
+        <rdfs:label>Capacitive bead</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#CapacitiveThinFilmPolymer -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#CapacitiveThinFilmPolymer">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#CapacitanceSensor"/>
+        <rdfs:comment>certain materials interact with water vapour and undergo a change in capacitance, in relation to ambient humidity.</rdfs:comment>
+        <rdfs:label>Capacitive - thin film polymer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#ChilledMirrorHygrometer -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#ChilledMirrorHygrometer">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#HumiditySensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Dimensionless"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#StressOrPressure"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source> chilled-mirror hygrometer [ET-AWS] http://www.hydrometeoindustry.org/Meetings2010/ET-AWS-6/Doc8[1]-AWS-MetadataCatalogues.pdf</dc:source>
+        <rdfs:comment>condensation is detected on the surface of a small polished metal reflecting surface (a mirror), using optical means. The temperature at which condensation is formed is the dew point.</rdfs:comment>
+        <rdfs:label>chilled-mirror hygrometer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#ChilledMirrorSystem -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#ChilledMirrorSystem">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#TemperatureSensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Temperature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch Chilled mirror system [ET-AWS] http://www.hydrometeoindustry.org/Meetings2010/ET-AWS-6/Doc8[1]-AWS-MetadataCatalogues.pdf</dc:source>
+        <rdfs:label>Chilled mirror system</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#CupAnemometer -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#CupAnemometer">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#WindSensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#VelocityOrSpeed"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch Cup anemometer [GAMP 2.4.1.5] http://www.wmo.int/pages/prog/wcp/agm/gamp/gamp_en.html</dc:source>
+        <rdfs:comment>the angular velocity of the cup is directly proportional to the component of the wind speed parallel to the axis of rotation.</rdfs:comment>
+        <rdfs:label>Cup anemometer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#CylindricalResonatorBarometer -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#CylindricalResonatorBarometer">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#AtmosphericPressureSensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#StressOrPressure"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch cylindrical resonator barometer [CIMO Guide 3.3.1] http://www.wmo.int/pages/prog/www/IMOP/publications/CIMO-Guide/CIMO%20Guide%207th%20Edition,%202008/Part%20I/Chapter%203.pdf</dc:source>
+        <rdfs:comment>A cylindrical resonator barometer (or vibrating cylinder air-pressure transducer) is designed to measure absolute air pressure using the vibrating element principle, providing a frequency output from which pressure is computed.</rdfs:comment>
+        <rdfs:label>cylindrical resonator barometer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#DewCell -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#DewCell">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#HumiditySensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Dimensionless"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#StressOrPressure"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source> dew cell [ET-AWS] http://www.hydrometeoindustry.org/Meetings2010/ET-AWS-6/Doc8[1]-AWS-MetadataCatalogues.pdf</dc:source>
+        <rdfs:comment>A dew cell heats a salt solution until its equilibrium vapour pressure equals to the ambient vapour pressure, and maintains this equilibrium The temperature when this occurs is measured and it provides a measure of the ambient vapour pressure</rdfs:comment>
+        <rdfs:label>dew cell</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#DewcelSystem -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#DewcelSystem">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#TemperatureSensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Temperature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch Dewcel system [ET-AWS] http://www.hydrometeoindustry.org/Meetings2010/ET-AWS-6/Doc8[1]-AWS-MetadataCatalogues.pdf</dc:source>
+        <rdfs:label>Dewcel system</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#DifferentialExpansionThermometer -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#DifferentialExpansionThermometer">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#TemperatureSensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Temperature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch Differential expansion thermometer [GAMP 2.4.1.2] http://www.wmo.int/pages/prog/wcp/agm/gamp/gamp_en.html</dc:source>
+        <rdfs:label>differential expansion thermometer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#DigitalPiezoResistiveBarometer -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#DigitalPiezoResistiveBarometer">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#AtmosphericPressureSensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#StressOrPressure"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch digital piezo-resistive barometer [CIMO Guide 3.3.1] http://www.wmo.int/pages/prog/www/IMOP/publications/CIMO-Guide/CIMO%20Guide%207th%20Edition,%202008/Part%20I/Chapter%203.pdf</dc:source>
+        <rdfs:label>digital piezo-resistive barometer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#DirmhirmSaubererPyranometer -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#DirmhirmSaubererPyranometer">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#Pyranometer"/>
+        <rdfs:comment>total solar irradiance on a horizontal surface</rdfs:comment>
+        <rdfs:label>Dirmhirm-Sauberer pyranometer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#DropCounters -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#DropCounters">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#PrecipitationSensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Distance"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#MassPerTimePerArea"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#VelocityOrSpeed"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch Drop counters [ET-AWS] http://www.hydrometeoindustry.org/Meetings2010/ET-AWS-6/Doc8[1]-AWS-MetadataCatalogues.pdf</dc:source>
+        <rdfs:comment>Counting the number of uniform droplets corresponding to a fixed volume of water</rdfs:comment>
+        <rdfs:label>Drop counters</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#ElectricSensorWhichExploitsTheConductivityVariationAsAFunctionOfWetness -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#ElectricSensorWhichExploitsTheConductivityVariationAsAFunctionOfWetness">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#HumiditySensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch electric sensor, which exploits the conductivity variation as a function of wetness [GAMP 2.4.1.6.3] http://www.wmo.int/pages/prog/wcp/agm/gamp/gamp_en.html</dc:source>
+        <rdfs:label>electric sensor, which exploits the conductivity variation as a function of wetness</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#ElectricalResistanceBlock -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#ElectricalResistanceBlock">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#HumiditySensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Dimensionless"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#StressOrPressure"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch Electrical resistance block [GAMP 2.4.1.6.2] http://www.wmo.int/pages/prog/wcp/agm/gamp/gamp_en.html</dc:source>
+        <rdfs:label>Electrical resistance block</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#ElectricalResistanceHumiditySensor -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#ElectricalResistanceHumiditySensor">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#HumiditySensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Dimensionless"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#StressOrPressure"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch electrical resistance humidity sensor [ET-AWS] http://www.hydrometeoindustry.org/Meetings2010/ET-AWS-6/Doc8[1]-AWS-MetadataCatalogues.pdf</dc:source>
+        <rdfs:comment>certain materials interact with water vapour and undergo a change in electrical resistance, in relation to ambient humidity.</rdfs:comment>
+        <rdfs:label>electrical resistance humidity sensor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#ElectricalResistanceThermometer -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#ElectricalResistanceThermometer">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#TemperatureSensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Temperature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch Resistance thermometer [GAMP 2.4.1.2] http://www.wmo.int/pages/prog/wcp/agm/gamp/gamp_en.html</dc:source>
+        <rdfs:comment>For small temperature changes, the increase in resistance of pure metals is proportional to the change in temperature. Often made in Platinum.</rdfs:comment>
+        <rdfs:label>Electrical resistance thermometer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#EppleyPyranometer -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#EppleyPyranometer">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#Pyranometer"/>
+        <rdfs:comment>total solar irradiance on a horizontal surface</rdfs:comment>
+        <rdfs:label>Eppley pyranometer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#FiberGlassBlock -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#FiberGlassBlock">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#ElectricalResistanceBlock"/>
+        <rdfs:label>Fiber-glass block</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#FrequencyDomainReflectometryCapacitance -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#FrequencyDomainReflectometryCapacitance">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#HumiditySensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Dimensionless"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch Frequency domain reflectometry (capacitance).................................................... [Soil Water Monitoring] http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.118.567&amp;rep=rep1&amp;type=pdf</dc:source>
+        <rdfs:label>Frequency domain reflectometry (capacitance)</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#GammaAbsorption -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#GammaAbsorption">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#HumiditySensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Dimensionless"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch Gamma absorption [GAMP 2.4.1.6.2] http://www.wmo.int/pages/prog/wcp/agm/gamp/gamp_en.html</dc:source>
+        <rdfs:label>Gamma absorption</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#GypsumBlock -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#GypsumBlock">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#ElectricalResistanceBlock"/>
+        <rdfs:label>Gypsum block</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#HotBeadAnemometer -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#HotBeadAnemometer">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#WindSensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#VelocityOrSpeed"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch Hot-bead anemometer [GAMP 2.4.1.5] http://www.wmo.int/pages/prog/wcp/agm/gamp/gamp_en.html</dc:source>
+        <rdfs:label>Hot-bead anemometer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#HotWireAnemometer -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#HotWireAnemometer">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#WindSensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#VelocityOrSpeed"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch Hot-wire anemometer [GAMP 2.4.1.5] http://www.wmo.int/pages/prog/wcp/agm/gamp/gamp_en.html</dc:source>
+        <rdfs:label>Hot-wire anemometer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#HumiditySensor -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#HumiditySensor">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#SensingDevice"/>
+        <rdfs:label>Humidity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#HydraulicLysimeterMoreRobustWeighingType -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#HydraulicLysimeterMoreRobustWeighingType">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#Lysimeter"/>
+        <rdfs:comment>Lysimeters are used for measurement of evaporation, transpiration, evapotranspiration (ET), effective rainfall, drainage, chemical contents of drainage water, to study climatic effects of ET on the performance of crops.</rdfs:comment>
+        <rdfs:label>hydraulic lysimeter (more robust weighing type)</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#ImpactDisdrometer -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#ImpactDisdrometer">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#PrecipitationSensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Distance"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#MassPerTimePerArea"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#VelocityOrSpeed"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch Impact disdrometer [IOM-99_FI-RI 2.2.2b] http://www.wmo.int/pages/prog/www/IMOP/publications/IOM-99_FI-RI.pdf</dc:source>
+        <rdfs:comment>Impact of precipitation particles on a plastic or metal membrane</rdfs:comment>
+        <rdfs:label>Impact disdrometer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#InfraRedGasAnalyzerHygrometer -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#InfraRedGasAnalyzerHygrometer">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#HumiditySensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Dimensionless"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch Infra-red gas analyzer hygrometer [GAMP 2.4.1.6.1] http://www.wmo.int/pages/prog/wcp/agm/gamp/gamp_en.html</dc:source>
+        <rdfs:label>Infra-red gas analyzer hygrometer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#KataThermometer -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#KataThermometer">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#TemperatureSensor"/>
+        <dc:source>skos:closeMatch Kata thermometer [GAMP 2.4.1.2] http://www.wmo.int/pages/prog/wcp/agm/gamp/gamp_en.html</dc:source>
+        <rdfs:label>Kata thermometer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#Laser -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#Laser">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#PrecipitationSensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Distance"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch Laser [ET-AWS] http://www.hydrometeoindustry.org/Meetings2010/ET-AWS-6/Doc8[1]-AWS-MetadataCatalogues.pdf</dc:source>
+        <rdfs:comment>emits modulated visible laser light and determines the distance to an object by comparing phase information</rdfs:comment>
+        <rdfs:label>Laser</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#LevelMeasurementRainGauge -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#LevelMeasurementRainGauge">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#PrecipitationSensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Distance"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#MassPerTimePerArea"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#VelocityOrSpeed"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch Level measurement rain gauge (LRG) [IOM-99_FI-RI 2.2.1e] http://www.wmo.int/pages/prog/www/IMOP/publications/IOM-99_FI-RI.pdf</dc:source>
+        <rdfs:comment>Measuring the water level in a tube</rdfs:comment>
+        <rdfs:label>Level measurement rain gauge</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#Lysimeter -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#Lysimeter">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#HumiditySensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#MassPerTimePerArea"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch lysimeter [GAMP 2.4.1.8.1] http://www.wmo.int/pages/prog/wcp/agm/gamp/gamp_en.html</dc:source>
+        <rdfs:comment>Lysimeters are used for measurement of evaporation, transpiration, evapotranspiration (ET), effective rainfall, drainage, chemical contents of drainage water, to study climatic effects of ET on the performance of crops.</rdfs:comment>
+        <rdfs:label>lysimeter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#MechanicalAneroidBarometer -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#MechanicalAneroidBarometer">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#AtmosphericPressureSensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#StressOrPressure"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch conventional aneroid barometer [CIMO Guide 3.4] http://www.wmo.int/pages/prog/www/IMOP/publications/CIMO-Guide/CIMO%20Guide%207th%20Edition,%202008/Part%20I/Chapter%203.pdf</dc:source>
+        <rdfs:label>Mechanical Aneroid barometer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#MechanicalHygrometer -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#MechanicalHygrometer">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#HumiditySensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Dimensionless"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch mechanical hygrometer [GAMP 2.4.1.6.1] http://www.wmo.int/pages/prog/wcp/agm/gamp/gamp_en.html</dc:source>
+        <rdfs:label>mechanical hygrometer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#MechanicalSensorWithRecorder -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#MechanicalSensorWithRecorder">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#HumiditySensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch mechanical sensor with recorder [GAMP 2.4.1.6.3] http://www.wmo.int/pages/prog/wcp/agm/gamp/gamp_en.html</dc:source>
+        <rdfs:label>mechanical sensor with recorder</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#MercuryBarometer -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#MercuryBarometer">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#AtmosphericPressureSensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#StressOrPressure"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch Mercury barometer [CIMO Guide 3.2] http://www.wmo.int/pages/prog/www/IMOP/publications/CIMO-Guide/CIMO%20Guide%207th%20Edition,%202008/Part%20I/Chapter%203.pdf</dc:source>
+        <rdfs:label>Mercury barometer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#Microlysimeter -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#Microlysimeter">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#Lysimeter"/>
+        <rdfs:comment>Lysimeters are used for measurement of evaporation, transpiration, evapotranspiration (ET), effective rainfall, drainage, chemical contents of drainage water, to study climatic effects of ET on the performance of crops.</rdfs:comment>
+        <rdfs:label>Microlysimeter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#MicrowaveRadarDisdrometer -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#MicrowaveRadarDisdrometer">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#PrecipitationSensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#VelocityOrSpeed"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch Microwave radar disdrometer [IOM-99_FI-RI 2.2.2c] http://www.wmo.int/pages/prog/www/IMOP/publications/IOM-99_FI-RI.pdf</dc:source>
+        <rdfs:comment>Backscatter (intensity of backscattered signal related to the number of particles and/or their water content)</rdfs:comment>
+        <rdfs:label>Microwave radar disdrometer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#MollGorczynkiPyranometer -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#MollGorczynkiPyranometer">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#Pyranometer"/>
+        <rdfs:comment>total solar irradiance on a horizontal surface</rdfs:comment>
+        <rdfs:label>Moll-Gorczynki pyranometer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#NetRadiometerOrNetPyrradiometerOrNetExchangeRadiometerOrBalancemeter -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#NetRadiometerOrNetPyrradiometerOrNetExchangeRadiometerOrBalancemeter">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#RadiationSensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#EnergyFlux"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch Net radiometers or net pyrradiometers or net exchange radiometers or balancemeters [GAMP 2.4.1.1] http://www.wmo.int/pages/prog/wcp/agm/gamp/gamp_en.html</dc:source>
+        <rdfs:comment>Net all-wave radiation (net flux of downward and upward total radiation i.e. solar, terrestrial and atmospheric)</rdfs:comment>
+        <rdfs:label>Net radiometer or net pyrradiometer or net exchange radiometer or balancemeter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#NeutronProbe -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#NeutronProbe">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#HumiditySensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Dimensionless"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch Neutron probe [GAMP 2.4.1.6.2] http://www.wmo.int/pages/prog/wcp/agm/gamp/gamp_en.html</dc:source>
+        <rdfs:label>Neutron probe</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#NylonUnits -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#NylonUnits">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#ElectricalResistanceBlock"/>
+        <rdfs:label>Nylon units</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#OpticalCapacitiveSensor -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#OpticalCapacitiveSensor">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#PrecipitationSensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#VelocityOrSpeed"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch Optical/Capacitive sensor [IOM-99_FI-RI 2.2.2d] http://www.wmo.int/pages/prog/www/IMOP/publications/IOM-99_FI-RI.pdf</dc:source>
+        <rdfs:label>Optical/Capacitive sensor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#OpticalDisdrometer -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#OpticalDisdrometer">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#PrecipitationSensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Distance"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#MassPerTimePerArea"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#VelocityOrSpeed"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch Optical disdrometer [IOM-99_FI-RI 2.2.2a] http://www.wmo.int/pages/prog/www/IMOP/publications/IOM-99_FI-RI.pdf</dc:source>
+        <rdfs:comment>Thin laser light sheets crossing the measuring volume: particle volume, speed (forward scatter)</rdfs:comment>
+        <rdfs:label>Optical disdrometer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#PopoffLysimeterCombinedDrainageAndWeighingType -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#PopoffLysimeterCombinedDrainageAndWeighingType">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#Lysimeter"/>
+        <rdfs:comment>Lysimeters are used for measurement of evaporation, transpiration, evapotranspiration (ET), effective rainfall, drainage, chemical contents of drainage water, to study climatic effects of ET on the performance of crops.</rdfs:comment>
+        <rdfs:label>Popoff lysimeter (combined drainage and weighing type)</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#PortableAspiratedAndShieldedPsychrometer -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#PortableAspiratedAndShieldedPsychrometer">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#HumiditySensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Dimensionless"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch portable aspirated and shielded psychrometer [GAMP 2.4.1.6.1] http://www.wmo.int/pages/prog/wcp/agm/gamp/gamp_en.html</dc:source>
+        <rdfs:comment>Artificially ventilated psychrometers, such as the Assmann type, the aspirated screen type, and the whirling type,</rdfs:comment>
+        <rdfs:label>portable aspirated and shielded psychrometer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#PrecipitationSensor -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#PrecipitationSensor">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#SensingDevice"/>
+        <rdfs:label>Precipitation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#PressureTubeAnemometer -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#PressureTubeAnemometer">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#WindSensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#VelocityOrSpeed"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch Pressure tube anemometer [GAMP 2.4.1.5] http://www.wmo.int/pages/prog/wcp/agm/gamp/gamp_en.html</dc:source>
+        <rdfs:label>Pressure tube anemometer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#PropellerAnemometer -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#PropellerAnemometer">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#WindSensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#VelocityOrSpeed"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch Propeller and vane anemometer [GAMP 2.4.1.5] http://www.wmo.int/pages/prog/wcp/agm/gamp/gamp_en.html</dc:source>
+        <rdfs:comment>the angular velocity of the propeller rotor is directly proportional to the component of the wind speed parallel to the axis of rotation.</rdfs:comment>
+        <rdfs:label>Propeller anemometer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#PsychrometerEquippedWithMercuryInGlassThermometer -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#PsychrometerEquippedWithMercuryInGlassThermometer">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#HumiditySensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Dimensionless"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch psychrometer equipped with mercury-in-glass thermometer [GAMP 2.4.1.6.1] http://www.wmo.int/pages/prog/wcp/agm/gamp/gamp_en.html</dc:source>
+        <rdfs:label>psychrometer equipped with mercury-in-glass thermometer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#Pyranometer -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#Pyranometer">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#RadiationSensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#EnergyFlux"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch solarimeter (pyranometer) [GAMP 2.3.1.1] http://www.wmo.int/pages/prog/wcp/agm/gamp/gamp_en.html</dc:source>
+        <rdfs:comment>total solar irradiance on a horizontal surface</rdfs:comment>
+        <rdfs:label>pyranometer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#PyranometerWithShadeRing -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#PyranometerWithShadeRing">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#RadiationSensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#EnergyFlux"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:broaderMatch solarimeter (pyranometer) [GAMP 2.3.1.1] http://www.wmo.int/pages/prog/wcp/agm/gamp/gamp_en.html</dc:source>
+        <rdfs:label>pyranometer with shade ring</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#Pyrgeometer -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#Pyrgeometer">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#RadiationSensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#EnergyFlux"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch pyrgeometer [GAMP 2.4.1.1] http://www.wmo.int/pages/prog/wcp/agm/gamp/gamp_en.html</dc:source>
+        <rdfs:comment>measurement of long-wave radiation from the earth</rdfs:comment>
+        <rdfs:label>Pyrgeometer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#QuantumSensor -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#QuantumSensor">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#RadiationSensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#EnergyFlux"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch quantum sensor [GAMP 2.4.1.1] http://www.wmo.int/pages/prog/wcp/agm/gamp/gamp_en.html</dc:source>
+        <rdfs:comment>measure the PAR directly in the range 0.4 to 0.7 micrometers</rdfs:comment>
+        <rdfs:label>Quantum sensor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#RadiationSensor -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#RadiationSensor">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#SensingDevice"/>
+        <rdfs:label>Radiation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#ResistiveAneroid -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#ResistiveAneroid">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#AneroidDisplacementTransducer"/>
+        <rdfs:comment>The aneroid displacement transducer contains a sensor with electrical properties (resistance or capacitance) that changes as the atmospheric pressure changes.</rdfs:comment>
+        <rdfs:label>Resistive aneroid</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#ScreenedAndOpenPanEvaporimeter -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#ScreenedAndOpenPanEvaporimeter">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#HumiditySensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#MassPerTimePerArea"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch screened and open pan evaporimeter [GAMP 2.4.1.8.1] http://www.wmo.int/pages/prog/wcp/agm/gamp/gamp_en.html</dc:source>
+        <rdfs:label>screened and open pan evaporimeter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#ShadedPicheEvaporimeter -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#ShadedPicheEvaporimeter">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#ScreenedAndOpenPanEvaporimeter"/>
+        <rdfs:label>Shaded Piche evaporimeter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#SingleOrDoubleJunctionPeltierPsychrometer -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#SingleOrDoubleJunctionPeltierPsychrometer">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#HumiditySensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Dimensionless"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch Single or double-junction peltier psychrometer [GAMP 2.4.1.6.1] http://www.wmo.int/pages/prog/wcp/agm/gamp/gamp_en.html</dc:source>
+        <rdfs:label>Single or double-junction peltier psychrometer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#SnowGauge -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#SnowGauge">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#PrecipitationSensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Distance"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch Snow gauge [GAMP 2.4.1.7] http://www.wmo.int/pages/prog/wcp/agm/gamp/gamp_en.html</dc:source>
+        <rdfs:label>Snow gauge</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#SnowPillow -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#SnowPillow">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#PrecipitationSensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Distance"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch Snow pillow [ET-AWS] http://www.hydrometeoindustry.org/Meetings2010/ET-AWS-6/Doc8[1]-AWS-MetadataCatalogues.pdf</dc:source>
+        <rdfs:comment>Tensiometric sensors detect the hydrostatic pressure caused by the layer of snow on top of the pillow</rdfs:comment>
+        <rdfs:label>Snow pillow</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#SonicRanging -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#SonicRanging">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#PrecipitationSensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Distance"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch Sonic ranging [ET-AWS] http://www.hydrometeoindustry.org/Meetings2010/ET-AWS-6/Doc8[1]-AWS-MetadataCatalogues.pdf</dc:source>
+        <rdfs:comment>measure the elapsed time between emission and return of an ultrasonic pulse sent vertically down to the snow covered ground surface</rdfs:comment>
+        <rdfs:label>Sonic ranging</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#SurfaceTemperatureRadiometer -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#SurfaceTemperatureRadiometer">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#RadiationSensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Temperature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch surface temperature radiometer [GAMP 2.4.1.1] http://www.wmo.int/pages/prog/wcp/agm/gamp/gamp_en.html</dc:source>
+        <rdfs:comment>measurements of infra-red radiation emitted from near or remote surfaces</rdfs:comment>
+        <rdfs:label>Surface temperature radiometer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#TemperatureSensor -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#TemperatureSensor">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#SensingDevice"/>
+        <rdfs:label>Temperature</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#Tensiometer -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#Tensiometer">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#HumiditySensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Dimensionless"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch Tensiometer [GAMP 2.4.1.6.2] http://www.wmo.int/pages/prog/wcp/agm/gamp/gamp_en.html</dc:source>
+        <rdfs:label>Tensiometer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#Thermistor -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#Thermistor">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#TemperatureSensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Temperature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch Thermistor [GAMP 2.4.1.2] http://www.wmo.int/pages/prog/wcp/agm/gamp/gamp_en.html</dc:source>
+        <rdfs:comment>Based on the variation of resistance of a semiconductor with a relatively large temperature coefficient of resistance, either positive (PTC) or negative (NTC) depending upon the actual material</rdfs:comment>
+        <rdfs:label>Thermistor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#Thermocouple -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#Thermocouple">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#TemperatureSensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Temperature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch Thermocouple [GAMP 2.4.1.2] http://www.wmo.int/pages/prog/wcp/agm/gamp/gamp_en.html</dc:source>
+        <rdfs:comment>Based on the generation of an electromotive force at the junction between two metals in contact, which is function of the temperature of the two metals</rdfs:comment>
+        <rdfs:label>Thermocouple</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#ThornthwaiteLysimeterDrainageType -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#ThornthwaiteLysimeterDrainageType">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#Lysimeter"/>
+        <rdfs:comment>Lysimeters are used for measurement of evaporation, transpiration, evapotranspiration (ET), effective rainfall, drainage, chemical contents of drainage water, to study climatic effects of ET on the performance of crops.</rdfs:comment>
+        <rdfs:label>Thornthwaite lysimeter (drainage type)</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#TimeDomainReflectometry -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#TimeDomainReflectometry">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#HumiditySensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Dimensionless"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch Time Domain Reflectometry [GAMP 2.4.1.6.2] http://www.wmo.int/pages/prog/wcp/agm/gamp/gamp_en.html</dc:source>
+        <rdfs:comment>Time domain reflectometry (TDR) and time delay transmission</rdfs:comment>
+        <rdfs:label>Time Domain Reflectometry</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#TippingBucketRainGauge -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#TippingBucketRainGauge">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#PrecipitationSensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Distance"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#MassPerTimePerArea"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#VelocityOrSpeed"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch Tipping bucket rain gauge [IOM-99_FI-RI 2.2.1a-d] http://www.wmo.int/pages/prog/www/IMOP/publications/IOM-99_FI-RI.pdf</dc:source>
+        <rdfs:comment>Tipping balance of two buckets</rdfs:comment>
+        <rdfs:label>Tipping bucket rain gauge</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#TippingBucketRainGaugeTbrgWithoutCorrection -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#TippingBucketRainGaugeTbrgWithoutCorrection">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#TippingBucketRainGauge"/>
+        <rdfs:comment>Tipping balance of two buckets</rdfs:comment>
+        <rdfs:label>Tipping-bucket rain gauge (TBRG) without correction</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#TippingBucketRainGaugeWithCorrectionAlgorithmTbrgSc -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#TippingBucketRainGaugeWithCorrectionAlgorithmTbrgSc">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#TippingBucketRainGauge"/>
+        <rdfs:comment>Tipping balance of two buckets</rdfs:comment>
+        <rdfs:label>Tipping-bucket rain gauge with correction algorithm (TBRG-SC)</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#TippingBucketRainGaugeWithExtraPulseCorrectionTbrgPc -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#TippingBucketRainGaugeWithExtraPulseCorrectionTbrgPc">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#TippingBucketRainGauge"/>
+        <rdfs:comment>Tipping balance of two buckets</rdfs:comment>
+        <rdfs:label>Tipping-bucket rain gauge with extra pulse correction (TBRG-PC)</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#TippingBucketRainGaugeWithMechanicalCorrectionTbrgMc -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#TippingBucketRainGaugeWithMechanicalCorrectionTbrgMc">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#TippingBucketRainGauge"/>
+        <rdfs:comment>Tipping balance of two buckets</rdfs:comment>
+        <rdfs:label>Tipping-bucket rain gauge with mechanical correction (TBRG-MC)</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#TubeSolarimeter -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#TubeSolarimeter">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#RadiationSensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#EnergyFlux"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch tube solarimeter [GAMP 2.4.1.1] http://www.wmo.int/pages/prog/wcp/agm/gamp/gamp_en.html</dc:source>
+        <rdfs:label>Tube solarimeter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#UltrasonicSensorVirtualTemperature -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#UltrasonicSensorVirtualTemperature">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#TemperatureSensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Temperature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch Ultrasonic Sensor (virtual temperature) [ET-AWS] http://www.hydrometeoindustry.org/Meetings2010/ET-AWS-6/Doc8[1]-AWS-MetadataCatalogues.pdf</dc:source>
+        <rdfs:label>Ultrasonic Sensor (virtual temperature)</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#UltrasonicWindSensor -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#UltrasonicWindSensor">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#WindSensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Angle"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#VelocityOrSpeed"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch Sonic anemometer [GAMP 2.4.1.5] http://www.wmo.int/pages/prog/wcp/agm/gamp/gamp_en.html</dc:source>
+        <rdfs:comment>A sonic signal is emitted by sensor transducers</rdfs:comment>
+        <rdfs:label>Ultrasonic Wind sensor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#WeighingLysimeter -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#WeighingLysimeter">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#Lysimeter"/>
+        <rdfs:comment>Lysimeters are used for measurement of evaporation, transpiration, evapotranspiration (ET), effective rainfall, drainage, chemical contents of drainage water, to study climatic effects of ET on the performance of crops.</rdfs:comment>
+        <rdfs:label>weighing lysimeter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#WeighingRainGauge -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#WeighingRainGauge">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#PrecipitationSensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Distance"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#MassPerTimePerArea"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#VelocityOrSpeed"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch Weighing rain gauge (WG) [IOM-99_FI-RI 2.2.1g-h] http://www.wmo.int/pages/prog/www/IMOP/publications/IOM-99_FI-RI.pdf</dc:source>
+        <rdfs:comment>Weighing of precipitation accumulated in a storage container</rdfs:comment>
+        <rdfs:label>Weighing rain gauge</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#WeighingRainGaugeWithPressureMeasurement -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#WeighingRainGaugeWithPressureMeasurement">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#WeighingRainGauge"/>
+        <rdfs:comment>Weighing of precipitation accumulated in a storage container</rdfs:comment>
+        <rdfs:label>Weighing rain gauge with pressure measurement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#WetBulbTemperatureMeasurementSystem -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#WetBulbTemperatureMeasurementSystem">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#TemperatureSensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Temperature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch Wet-bulb temperature measurement system [ET-AWS] http://www.hydrometeoindustry.org/Meetings2010/ET-AWS-6/Doc8[1]-AWS-MetadataCatalogues.pdf</dc:source>
+        <rdfs:label>Wet-bulb temperature measurement system</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#WettingFrontDetection -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#WettingFrontDetection">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#HumiditySensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Distance"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch Wetting front detection [Soil Water Monitoring] http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.118.567&amp;rep=rep1&amp;type=pdf</dc:source>
+        <rdfs:label>Wetting front detection</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#WindSensor -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#WindSensor">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#SensingDevice"/>
+        <rdfs:label>Wind</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/meteo/aws#WindVane -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/aws#WindVane">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/aws#WindSensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Angle"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source>skos:closeMatch Wind Vane [GAMP 2.4.1.5] http://www.wmo.int/pages/prog/wcp/agm/gamp/gamp_en.html</dc:source>
+        <rdfs:comment>The signal generator is a shaft angle transducer: potentiometers, alternating and direct current synchros, digital angle-encoder disks, direct reading dials, and rotary switches</rdfs:comment>
+        <rdfs:label>Wind Vane</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/qu/dim#Angle -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/qu/dim#Angle"/>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/qu/dim#Dimensionless -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/qu/dim#Dimensionless"/>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/qu/dim#Distance -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/qu/dim#Distance"/>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/qu/dim#Duration -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/qu/dim#Duration"/>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/qu/dim#EnergyFlux -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/qu/dim#EnergyFlux"/>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/qu/dim#MassPerTimePerArea -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/qu/dim#MassPerTimePerArea"/>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/qu/dim#StressOrPressure -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/qu/dim#StressOrPressure"/>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity"/>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/qu/dim#Temperature -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/qu/dim#Temperature"/>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/qu/dim#VelocityOrSpeed -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/qu/dim#VelocityOrSpeed"/>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/ssn#SensingDevice -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/ssn#SensingDevice"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

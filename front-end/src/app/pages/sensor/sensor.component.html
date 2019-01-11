@@ -1,0 +1,303 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="card">
+      <div class="card-header" data-background-color="blue">
+        <h4 class="title">Register Sensor</h4>
+      </div>
+      <div class="card-content">
+        <form>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group form-blue label-floating is-empty">
+                <div class="dropdown">
+                  <button href="#" class="btn dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                            {{selectSensingDevice.label}}
+                            <b class="caret"></b>
+                        </button>
+                  <ul class="dropdown-menu">
+                    <li *ngFor="let s of lstSensingDevice" (click)="onClickSensingDevice(s)"><a>{{s.label}}</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group form-blue label-floating is-empty">
+                <label class="control-label">URI</label>
+                <input type="text" [(ngModel)]="indName" name="indName" class="form-control">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group form-blue label-floating is-empty">
+                <label class="control-label">Label</label>
+                <input type="text" [(ngModel)]="label" name="label" class="form-control">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group form-blue label-floating is-empty">
+                <label class="control-label">Comment</label>
+                <textarea class="form-control" [(ngModel)]="comment" name="comment" rows="5"></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="card-header" data-background-color="blue" style="margin-top: 20px;">
+              <h4 class="title">Register Property</h4>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <button class="btn btn-success" data-backdrop="false" data-toggle="modal" data-target="#addProperty">
+                Add Property
+              </button>
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>URI</th>
+                    <th>Label</th>
+                    <th>Comment</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let p of lstPropertySelect" (click)="onSelectProperty(p)">
+                    <td>{{p.uri}}</td>
+                    <td>{{p.label}}</td>
+                    <td>{{p.commnet}}</td>
+                    <td class="td-actions">
+                      <button type="button" rel="tooltip" class="btn btn-danger" (click)="delProperty(p)">
+                    <i class="material-icons">close</i>
+                </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="row">
+            <div class="card-header" data-background-color="blue" style="margin-top: 20px;">
+              <h4 class="title">Register Measurement</h4>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <button class="btn btn-default disabled">
+                Property Select: {{propertySelect.uri}}
+              </button>
+              <button class="btn btn-success" data-backdrop="false" data-toggle="modal" data-target="#addMeasurement">
+                Add Measurement
+              </button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>URI</th>
+                    <th>Type</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let m of lstMeasurementAux">
+                    <td>{{m.indNameProperty}}</td>
+                    <td>{{m.typeNameProperty}}</td>
+                    <td class="td-actions">
+                      <button type="button" rel="tooltip" class="btn btn-danger" (click)="delMeasurement(m)">
+                        <i class="material-icons">close</i>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="row">
+            <div class="card-header" data-background-color="blue" style="margin-top: 20px;">
+              <h4 class="title">Register Spatial Thing</h4>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group form-blue label-floating is-empty">
+                <label class="control-label">URI</label>
+                <input type="text" [(ngModel)]="spatialThingAdd.indName" name="spatialThingAdd.indName" class="form-control">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group form-blue label-floating is-empty">
+                <label class="control-label">Label</label>
+                <input type="text" [(ngModel)]="spatialThingAdd.descLabel" name="spatialThingAdd.descLabel" class="form-control">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group form-blue label-floating is-empty">
+                <label class="control-label">Lat</label>
+                <input type="text" [(ngModel)]="spatialThingAdd.lat" name="spatialThingAdd.lat" class="form-control">
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group form-blue label-floating is-empty">
+                <label class="control-label">Long</label>
+                <input type="text" [(ngModel)]="spatialThingAdd.lon" name="spatialThingAdd.lon" class="form-control">
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group form-blue label-floating is-empty">
+                <label class="control-label">Alt</label>
+                <input type="text" [(ngModel)]="spatialThingAdd.alt" name="spatialThingAdd.alt" class="form-control">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group form-blue label-floating is-empty">
+                <label class="control-label">Comment</label>
+                <textarea class="form-control" [(ngModel)]="spatialThingAdd.descComment" name="spatialThingAdd.descComment" rows="5"></textarea>
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-danger pull-right" (click)="cancelSensor();">Cancel</button>
+          <button class="btn btn-success pull-right" (click)="createSensor();">Save</button>
+          <div class="clearfix"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Property -->
+<div class="modal fade" id="addProperty" tabindex="-1" role="dialog" aria-labelledby="addProperty" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Property</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style=" position: absolute; right: 30px; top: 30px;">
+          <i class="material-icons" style="font-size: 24px;">close</i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>URI</th>
+              <th>Label</th>
+              <th>Comment</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let s of lstProperty">
+              <td>{{s.nome}}</td>
+              <td>{{s.label}}</td>
+              <td>{{s.comment}}</td>
+              <td class="td-actions">
+                <button type="button" rel="tooltip" class="btn btn-success" (click)="onClickAddProperty(s)">
+                    <i class="material-icons">add</i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Add Measurement -->
+<div class="modal fade" id="addMeasurement" tabindex="-1" role="dialog" aria-labelledby="addMeasurement" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="dropdown">
+          <button href="#" class="btn dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+              {{selectMeasurementProperty}}
+              <b class="caret"></b>
+          </button>
+          <ul class="dropdown-menu">
+            <li *ngFor="let mp of lstMeasurementProperty" (click)="onClickMeasurementList(mp)"><a>{{mp}}</a></li>
+          </ul>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group form-blue label-floating is-empty">
+              <label class="control-label">URI</label>
+              <input type="text" [(ngModel)]="measurementAdd.indNameProperty" name="indNameProperty" class="form-control">
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" data-background-color="blue">
+            <h4 class="title">Register Measurement Min</h4>
+          </div>
+          <div class="card-content">
+            <form>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group form-blue label-floating is-empty">
+                    <label class="control-label">Value</label>
+                    <input type="text" [(ngModel)]="measurementAdd.min.value" name="valueMin" class="form-control">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group form-blue label-floating is-empty">
+                    <label class="control-label">Unit</label>
+                    <input type="text" [(ngModel)]="measurementAdd.min.unit" name="unitMin" class="form-control">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group form-blue label-floating is-empty">
+                    <label class="control-label">Symbol</label>
+                    <input type="text" [(ngModel)]="measurementAdd.min.symbol" name="symbolMin" class="form-control">
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" data-background-color="blue">
+            <h4 class="title">Register Measurement Max</h4>
+          </div>
+          <div class="card-content">
+            <form>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group form-blue label-floating is-empty">
+                    <label class="control-label">Value</label>
+                    <input type="text" [(ngModel)]="measurementAdd.max.value" name="valueMax" class="form-control">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group form-blue label-floating is-empty">
+                    <label class="control-label">Unit</label>
+                    <input type="text" [(ngModel)]="measurementAdd.max.unit" name="unitMax" class="form-control">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group form-blue label-floating is-empty">
+                    <label class="control-label">Symbol</label>
+                    <input type="text" [(ngModel)]="measurementAdd.max.symbol" name="symbolMax" class="form-control">
+                  </div>
+                </div>
+              </div>
+              <button class="btn btn-danger pull-right" (click)="cancelMeasurement();">Cancel</button>
+              <button class="btn btn-success pull-right" (click)="createMeasurement();">Save</button>
+              <div class="clearfix"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
